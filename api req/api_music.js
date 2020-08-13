@@ -1,5 +1,7 @@
 /* Load the HTTP library */
 var unirest = require("unirest");
+require("dotenv").config()
+
 
 var req = unirest("GET", "https://deezerdevs-deezer.p.rapidapi.com/search");
 
