@@ -9,7 +9,7 @@ req.query({
 
 req.headers({
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": process.env.PASSW,
+    "x-rapidapi-key": process.env.PASSW_DW,
     "useQueryString": true
 });
 
