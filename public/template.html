@@ -50,10 +50,7 @@
 
   <body class="index-page">
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg fixed-top navbar-transparent"
-      color-on-scroll="100"
-    >
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
       <div class="container">
         <div class="navbar-translate">
           <a
@@ -121,22 +118,50 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="wrapper">
-      <div class="page-header header-filter">
-        <div class="squares square1"></div>
-        <div class="squares square2"></div>
-        <div class="squares square3"></div>
-        <div class="squares square4"></div>
-        <div class="squares square5"></div>
-        <div class="squares square6"></div>
-        <div class="squares square7"></div>
-        <div class="container">
-          <div class="content-center brand">
-            <h1 class="h1-seo">SNAPS</h1>
-            <h3>Welcome back <span>user</span></h3>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Sign Up Form</h2>
+          <form class="signup">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email-input"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password-input"
+                placeholder="Password"
+              />
+            </div>
+            <div
+              style="display: none;"
+              id="alert"
+              class="alert alert-danger"
+              role="alert"
+            >
+              <span
+                class="glyphicon glyphicon-exclamation-sign"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Sign Up</button>
+          </form>
+          <br />
+          <p>Or log in <a href="/login">here</a></p>
         </div>
       </div>
+    </div>
+
+    <div class="wrapper">
       <div class="main">
         <div class="section section-basic" id="basic-elements">
           <img src="assets/img/path1.png" class="path" />
