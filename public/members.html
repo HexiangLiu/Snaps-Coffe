@@ -3,33 +3,159 @@
 
 <head>
   <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link href="stylesheets/style.css" rel="stylesheet" />
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
+  <nav class="pa3 pa4-ns">
+    <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">
+      <img class="center tc logo" src="./assets/img/SnapsCoffeeShopLogo.png" alt="" /></a>
+
+
+    <div class="tc">
+      <button class="helvetica logout b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" href="/logout"
+        title="Home">
         Logout
-      </a>
+      </button>
     </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
+  </nav>
+
+  <article class="cf ph3 ph5-ns pv5">
+    <header class="fn fl-ns w-50-ns pr4-ns helvetica">
+      <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
+        MENU
+      </h1>
+      <article class="">
+        <h1 class="f4 bold center mw6">COFFEE</h1>
+        <ul class="list pl0 ml0 center mw6 ba b--light-silver br2">
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn latte b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" data-name="latte">
+              Latte
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn espresso b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="espresso">
+              Espresso
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn mocha b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" data-name="mocha">
+              Mocha
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn frapuccino b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="frappuccino">
+              Frapuccino
+            </button>
+          </li>
+        </ul>
+      </article>
+      <article class="">
+        <h1 class="f4 bold center mw6">TEA</h1>
+        <ul class="list pl0 ml0 center mw6 ba b--light-silver br2">
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn chai b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" data-name="chai">
+              Chai
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn green-tea b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="green-tea">
+              Green Tea
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn bubble-tea b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="bubble-tea">
+              Bubble Tea
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn matcha b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" data-name="matcha">
+              Matcha
+            </button>
+          </li>
+        </ul>
+      </article>
+      <article class="">
+        <h1 class="f4 bold center mw6">PASTRIES</h1>
+        <ul class="list pl0 ml0 center mw6 ba b--light-silver br2">
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn croissant b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="croissant">
+              Croissant
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn muffin b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib" data-name="muffin">
+              Muffin
+            </button>
+          </li>
+          <li class="ph3 pv3 bb b--light-silver">
+            <button class="itemBtn cupcake b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib"
+              data-name="cupcake">
+              Cupcake
+            </button>
+          </li>
+        </ul>
+      </article>
+    </header>
+    <div class="helvetica fn fl-ns w-50-ns">
+      <article class="center mw5 mw6-ns hidden ba mv4">
+        <h1 class="f4 bg-near-black white mv0 pv2 ph3 title">
+          Welcome, <span id="user">user</span>
+        </h1>
+        <audio autoplay='autoplay' controls='controls'>
+          <source src='https://cdns-preview-7.dzcdn.net/stream/c-7d384d8e3da32c7759b7e679e9148e90-6.mp3'></audio>
+        <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+          <div class="tc">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h3 w3 dib"
+              title="Photo of a kitty staring at you" />
+            <h1 class="f4">username</h1>
+            <hr class="mw3 bb bw1 b--black-10" />
+          </div>
+          <p class="lh-copy measure center f6 black-70">
+            Quite affectionate and outgoing. She loves to get chin scratches
+            and will roll around on the floor waiting for you give her more of
+            them.
+          </p>
+        </article>
+        <div class="pa3 pa5-ns">
+          <h3>ORDER</h3>
+          <ul class="order-list list pl0 measure center">
+            <li class="order-item lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+              Latte
+            </li>
+            <li class="order-item lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+              Croissant
+            </li>
+          </ul>
+          <button class="submit_order b ph3 pv2 ba b--black bg-transparent grow pointer f6 dib">
+            Place Order
+          </button>
+        </div>
+        <div class="pa3 bt">
+          <h2 class="order-item">Item</h2>
+          <img src="http://tachyons.io/img/space.jpg" class="w-100 f5 measure" alt="Photo of outer space" />
+          <p class=" music f6 f5-ns lh-copy measure mv0">
+            Click on the + next to items you'd like to order. We'll get it
+            prepared as soon as we can. In the meantime, feel free to listen
+            to our jazz playlist. Enjoy your time at Snaps!
+          </p>
+
+        </div>
+      </article>
     </div>
-  </div>
+  </article>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
-
+  <script type="text/javascript" src="js/order.js"></script>
 </body>
 
 </html>
