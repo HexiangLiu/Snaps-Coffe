@@ -47,4 +47,15 @@ module.exports = function (app) {
       });
     }
   });
+
+  // app.put('api/orders/:id', (req, res));
+
+  app.post('/api/orders', (req, res) => {
+    console.log(req.user);
+    console.log(req.body);
+    db.Order.create({
+      name: req.body.name,
+      UserId: req.user.id,
+    }).then((order) => res.json(order));
+  });
 };
