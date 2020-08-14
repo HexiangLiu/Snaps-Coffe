@@ -39,11 +39,11 @@ module.exports = function (app) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        username: req.user.username,
-        id: req.user.id,
+      db.Order.findAll({
+        where: { UserId: req.user.id },
+      }).then((data) => {
+        console.log(data);
+        res.json(data);
       });
     }
   });
