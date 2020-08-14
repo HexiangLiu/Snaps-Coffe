@@ -3,10 +3,10 @@ const axios = require("axios");
 require("dotenv").config()
 
 // let audioFile = []
-function getComposition(audioFile) {
+function getComposition() {
 
 
-    axios({
+    return axios({
         "method": "GET",
         "url": "https://deezerdevs-deezer.p.rapidapi.com/search",
         "headers": {
@@ -21,19 +21,8 @@ function getComposition(audioFile) {
         .then((response) => {
 
             const songs = response.data.data;
-            console.log(songs)
-            songs.map(song => {
-                // let audioTitle = song.title_short;
-                audioFile = song.preview;
-                console.log("audioFile:", audioFile)
-                // console.log("audioTitle:", audioTitle)
-                //create an array of objects songs that array contain keys as a ausioFile and audioTitle
-                //return an array as a result
-                return audioFile
-                // console.log(audioFile)
 
-            }
-            )
+            return songs
 
         })
         .catch((error) => {
@@ -41,11 +30,25 @@ function getComposition(audioFile) {
         })
 
 
+    // songs.map(song => {
+    //     // let audioTitle = song.title_short;
+    //     audioFile = song.preview;
+    //     console.log("audioFile:", audioFile)
+    //     // console.log("audioTitle:", audioTitle)
+    //     //create an array of objects songs that array contain keys as a ausioFile and audioTitle
+    //     //return an array as a result
+    //     return audioFile
+    //     // console.log(audioFile)
+
+
+
 }
-getComposition()
 
 
-module.exports = getComposition
+
+module.exports = {
+    getComposition: getComposition
+}
 
 
 // app.get('/api/user_data', function (req, res) {
