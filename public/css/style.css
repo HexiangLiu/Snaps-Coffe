@@ -1,0 +1,87 @@
+:root {
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #aaa;
+  --color-main: #f7f2e7;
+
+  --transion: all 0.3s;
+  --shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Architects Daughter', cursive;
+  background: linear-gradient(to right bottom, #eeecda, #f6e1e1);
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  margin: auto;
+  width: 30%;
+}
+
+.menu {
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+  overflow-y: scroll;
+  height: 50vh;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-grey-light-1);
+  border-radius: 3px;
+  transition: var(--transion);
+  box-shadow: var(--shadow);
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+}
+
+.menu-item:active {
+  transform: translateY(2px);
+}
+
+.menu-item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.menu-img {
+  width: 50%;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-check {
+  transition: var(--transion);
+}
+.fa-check:hover {
+  transform: translateY(-3px);
+}
+
+.fa-check:active {
+  transform: translateY(2px);
+}
+
+.disabled {
+  background-color: #eee !important;
+}
