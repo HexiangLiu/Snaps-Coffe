@@ -4,8 +4,6 @@ require("dotenv").config()
 
 // let audioFile = []
 function getComposition() {
-
-
     return axios({
         "method": "GET",
         "url": "https://deezerdevs-deezer.p.rapidapi.com/search",
@@ -18,32 +16,8 @@ function getComposition() {
             "q": "jazz"
         }
     })
-        .then((response) => {
-
-            const songs = response.data.data;
-
-            return songs
-
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-
-
-    // songs.map(song => {
-    //     // let audioTitle = song.title_short;
-    //     audioFile = song.preview;
-    //     console.log("audioFile:", audioFile)
-    //     // console.log("audioTitle:", audioTitle)
-    //     //create an array of objects songs that array contain keys as a ausioFile and audioTitle
-    //     //return an array as a result
-    //     return audioFile
-    //     // console.log(audioFile)
-
-
 
 }
-
 
 
 module.exports = {
@@ -51,16 +25,4 @@ module.exports = {
 }
 
 
-// app.get('/api/user_data', function (req, res) {
-//     if (!req.user) {
-//       // The user is not logged in, send back an empty object
-//       res.json({});
-//     } else {
-//       // Otherwise send back the user's email and id
-//       // Sending back a password, even a hashed password, isn't a good idea
-//       res.json({
-//         username: req.user.username,
-//         id: req.user.id,
-//       });
-//     }
-//   });
+
