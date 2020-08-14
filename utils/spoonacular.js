@@ -19,19 +19,6 @@ function menuQuery(searchItem) {
     }
   })
 
-
-  // menuItems.map(menuItem => {
-  //   let itemTitle = menuItem.title;
-  //   let itemImage = menuItem.image;
-  //   let itemServing = menuItem.servingSize;
-  //   console.log(itemTitle);
-  //   console.log(itemImage);
-  //   console.log(itemServing);
-  // })
-  // })
-  // .catch((error) => {
-  //   console.log(error)
-  // })
 };
 // menuQuery(searchItem);
 module.exports = { menuQuery: menuQuery }
