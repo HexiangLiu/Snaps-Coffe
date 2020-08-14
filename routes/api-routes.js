@@ -42,13 +42,22 @@ module.exports = function (app) {
       db.Order.findAll({
         where: { UserId: req.user.id },
       }).then((data) => {
-        console.log(data);
         res.json(data);
       });
     }
   });
 
-  // app.put('api/orders/:id', (req, res));
+  app.put('/api/orders', (req, res) => {
+    console.log(req.body);
+    db.Order.update(
+      { complete: true },
+      {
+        where: {
+          id: parseInt(req.body.id),
+        },
+      }
+    ).then((data) => res.json(data));
+  });
 
   app.post('/api/orders', (req, res) => {
     console.log(req.user);
