@@ -18,7 +18,6 @@ function menuQuery(searchItem) {
       "query": searchItem
     }
   })
-
 };
-// menuQuery(searchItem);
+
 module.exports = { menuQuery: menuQuery }

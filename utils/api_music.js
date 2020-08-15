@@ -23,6 +23,3 @@ function getComposition() {
 module.exports = {
     getComposition: getComposition
 }
-
-
-
