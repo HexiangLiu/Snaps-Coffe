@@ -44,8 +44,7 @@ $.ajax({
 
       $('.submit_order').on('click', () => {
         console.log('clicked');
-        $.post('/api/orders', { name: $('.title').text() }).then((order) => {
-          console.log(order);
+        $.post('/api/orders', { name: $('.title').text() }).then(() => {
           location.reload();
         });
       });
