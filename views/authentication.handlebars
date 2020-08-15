@@ -1,36 +1,29 @@
-<nav class="pa3 pa4-ns helvetica">
-    <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">
-        <img class="center tc logo" src="/image/SnapsCoffeeShopLogo.png" alt="logo" /></a>
-</nav>
-
-<main class="pa4 black-80">
-    <form class="measure center helvetica {{action}}">
-        <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
-            <legend class="f4 fw6 ph0 mh0">{{action}}</legend>
-            <div class="mt3">
-                <label class="db fw6 lh-copy f6" for="email-address">Username</label>
-                <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text"
-                    name="email-address" id="username-input" />
-            </div>
-            <div class="mv3">
-                <label class="db fw6 lh-copy f6" for="password">Password</label>
-                <input class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password"
-                    name="password" id="password-input" />
-            </div>
-        </fieldset>
-        <div class="">
-            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit"
-                value={{action}} />
+<section>
+    <img class="d-block mx-auto logo" style="width:100%" src="/image/SnapsCoffeeShopLogo.png" alt="logo" />
+    <form class="form-group {{action}}">
+        <div class="form-group">
+            <label for="username-input">Username</label>
+            <input type="text" class="form-control" id="username-input" placeholder="Name">
         </div>
-        <div class="lh-copy mt3">
+        <div class="form-group">
+            <label for="password-input">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+        </div>
+        <button class="btn btn-success btn-block" type="submit">
+            {{action}}
+        </button>
+        <div>
             {{#if newUser}}
-            <p>Have account already? click here to<a href="/login" class="f6 link dim black db">Login</a></p>
+            <p>Have account already? click here to <a href="/login" class="f6 link dim black db">Login</a></p>
             {{else}}
-            <p>Doesn't have an account yet? click here to<a href="/" class="f6 link dim black db">SignUp</a></p>
+            <p>Doesn't have an account yet? click here to <a href="/" class="f6 link dim black db">SignUp</a></p>
             {{/if}}
         </div>
     </form>
-</main>
+</section>
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/{{action}}.js"></script>

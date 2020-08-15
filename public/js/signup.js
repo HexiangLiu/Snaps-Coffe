@@ -6,7 +6,6 @@ $(document).ready(function () {
 
   // When the signup button is clicked, we validate the name and password are not blank
   signUpForm.on('submit', function (event) {
-    console.log('submit');
     event.preventDefault();
     var userData = {
       username: nameInput.val().trim(),
