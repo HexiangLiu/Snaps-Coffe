@@ -1,6 +1,6 @@
 :root {
   --color-grey-light-1: #f9f7f6;
-  --color-grey-light-2: #aaa;
+  --color-grey-light-2: #dddddd;
   --color-main: #f7f2e7;
 
   --transion: all 0.3s;
@@ -50,6 +50,7 @@ body {
 
 .menu-item:hover {
   transform: translateY(-3px);
+  background-color: var(--color-grey-light-2);
 }
 
 .menu-item:active {
@@ -63,7 +64,7 @@ body {
 .menu-img {
   width: 50%;
   border-radius: 50%;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .order-item {
@@ -84,4 +85,9 @@ body {
 
 .disabled {
   background-color: #eee !important;
+}
+
+.item-img {
+  width: 30vh;
+  height: 30vh;
 }
