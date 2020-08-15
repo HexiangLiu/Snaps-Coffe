@@ -16,10 +16,10 @@ $.ajax({
 
   });
 
+  //choose the random song
+  //inside of the  audio element create a var, that can contain src of the random song
   btn.on('click', () => {
-
     //make ajax request
-
     $.ajax({
       url: "/api/spoonacular",
       method: "GET"
@@ -32,23 +32,12 @@ $.ajax({
         console.log(itemImage);
         console.log(itemServing);
       });
-
-
-
     })
-
-
-
   })
 })
 
 
-//choose the random song
-//create an audio element that contains as a src the random song
-// var music = $("<audio autoplay='autoplay' controls='controls'><source src='" + audioFile + "'></audio>")
-// //append it to the page
-// $("body").append(music)
-// });
+
 
 place_btn.on('click', () => {
   console.log('clicked');
