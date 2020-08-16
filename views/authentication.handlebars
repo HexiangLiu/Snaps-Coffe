@@ -1,27 +1,35 @@
-<section>
-    <img class="d-block mx-auto logo" style="width:100%" src="/image/SnapsCoffeeShopLogo.png" alt="logo" />
-    <form class="form-group {{action}}">
-        <div class="form-group">
-            <label for="username-input">Username</label>
-            <input type="text" class="form-control" id="username-input" placeholder="Name">
-        </div>
-        <div class="form-group">
-            <label for="password-input">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-        </div>
-        <button class="btn btn-success btn-block" type="submit">
-            {{action}}
-        </button>
-        <div>
-            {{#if newUser}}
+<section class="auth-section">
+    <div class="bg_video">
+        <video class="bg_video_content" autoplay muted loop>
+            <source src="/image/coverr-sample-42-1026.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="auth">
+        <img class="d-block mx-auto logo" style="width:100%" src="/image/SnapsCoffeeShopLogo.png" alt="logo" />
+        <form class="form-group {{action}}">
+            <div class="form-group">
+                <label for="username-input">Username</label>
+                <input type="text" class="form-control" id="username-input" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="password-input">Password</label>
+                <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <button class="btn btn-success btn-block" type="submit">
+                {{action}}
+            </button>
+            <div>
+                {{#if newUser}}
 
-            <p>Have an account already? Click here to <a href="/login" class="f6 link dim black db">login</a></p>
-            {{else}}
-            <p>Don't have an account yet? Click here to <a href="/" class="f6 link dim black db">sign Up</a></p>
+                <p>Have an account already? Click here to <a href="/login" class="f6 link dim black db">login</a></p>
+                {{else}}
+                <p>Don't have an account yet? Click here to <a href="/" class="f6 link dim black db">sign Up</a></p>
 
-            {{/if}}
-        </div>
-    </form>
+                {{/if}}
+            </div>
+        </form>
+    </div>
+
 </section>
 
 
