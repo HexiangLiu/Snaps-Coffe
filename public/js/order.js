@@ -2,6 +2,19 @@ const detail_container = $('.item-detail');
 const audioEl = $('.audioEl')
 var btn = $('.menu-item');
 
+$.ajax({
+  url: '/api/music',
+  method: 'GET',
+}).then(function (songs) {
+  let i = Math.floor(Math.random() * songs.length)
+  //choose the random song
+  let audioTitle = songs[i].title_short;
+  let audioFile = songs[i].preview;
+  //append random song to the page
+  audioEl.append(`<audio autoplay loop controls volume 0.001 >
+    <source src="${audioFile}" />
+  </audio><br/><p>Now's playing: ${audioTitle}</p>`)
+});
 
 
 btn.on('click', (e) => {
@@ -34,21 +47,7 @@ btn.on('click', (e) => {
           <button class="btn btn-warning btn-block text-white submit_order">Place order</button>
       </div>
   </div>`);
-    // $.ajax({
-    //   url: '/api/music',
-    //   method: 'GET',
-    // }).then(function (songs) {
-    //   songs.map((song) => {
-    //     let audioTitle = song[0].title_short;
-    //     let audioFile = song[0].preview;
-    //     console.log('audioFile:', audioFile);
-    //     console.log('audioTitle:', audioTitle);
-    //     audioEl.append(`<audio controls volume 0.01>
-    // <source src="${audioFile}" >
 
-    // </audio>
-    // <p>Now's playing:</p>${audioTitle}`)
-    //   });
     $('.submit_order').on('click', () => {
       console.log('clicked');
       $.post('/api/orders', { name: $('.title').text() }).then(() => {
@@ -57,11 +56,5 @@ btn.on('click', (e) => {
     });
   });
 });
-});
 
-//choose the random song
-//create an audio element that contains as a src the random song
-// var music = $("<audio autoplay='autoplay' controls='controls'><source src='" + audioFile + "'></audio>")
-// //append it to the page
-// $("body").append(music)
-// });
+
