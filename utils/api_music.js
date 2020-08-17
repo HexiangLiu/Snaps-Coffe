@@ -10,7 +10,7 @@ function getComposition() {
         "headers": {
             "content-type": "application/octet-stream",
             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-            "x-rapidapi-key": process.env.PASSW_DW,
+            "x-rapidapi-key": "4eb5968d74msh7a28f9eece9c17ap13c40djsnde5aaab47e32",
             "useQueryString": true
         }, "params": {
             "q": "jazz"
