@@ -1,5 +1,8 @@
 const detail_container = $('.item-detail');
-// const getComposition = require("../utils/api_music.js")
+const audioEl = $('.audioEl')
+
+
+
 var btn = $('.menu-item');
 
 $.ajax({
@@ -11,6 +14,7 @@ $.ajax({
     let audioFile = song.preview;
     console.log('audioFile:', audioFile);
     console.log('audioTitle:', audioTitle);
+
   });
 
 
