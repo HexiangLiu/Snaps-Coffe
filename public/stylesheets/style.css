@@ -1,0 +1,16 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.logo {
+  margin: auto;
+  width: 30%;
+}
+.audioPlayer{
+  align-items: center;
+  background-color: black;
+  padding:2%;
+  display: block;
+  margin:0 auto;
+}
