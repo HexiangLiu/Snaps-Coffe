@@ -6,7 +6,6 @@ btn.on('click', (e) => {
   //make ajax request
 
   let q;
-
   if (e.target.matches('h3')) {
     q = `q=${$(e.target).text()}`;
   } else if (e.target.matches('li')) {
@@ -19,7 +18,6 @@ btn.on('click', (e) => {
     method: 'GET',
   }).then(function (menuItems) {
     detail_container.empty();
-
     detail_container.append(`<div class="card">
       <img src="${menuItems[0].image}"
           class="card-img-top item-img" alt="${menuItems[0].title}">
@@ -31,7 +29,6 @@ btn.on('click', (e) => {
           <button class="btn btn-warning btn-block text-white submit_order">Place order</button>
       </div>
   </div>`);
-
     $.ajax({
       url: '/api/music',
       method: 'GET',
@@ -45,7 +42,6 @@ btn.on('click', (e) => {
       <source src="${audioFile}" />
     </audio><br/><p>Now's playing: ${audioTitle}</p></div>`);
     });
-
     $('.submit_order').on('click', () => {
       console.log('clicked');
       $.post('/api/orders', { name: $('.title').text() }).then(() => {
