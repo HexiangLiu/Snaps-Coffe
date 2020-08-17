@@ -38,7 +38,7 @@ btn.on('click', (e) => {
       let audioTitle = songs[i].title_short;
       let audioFile = songs[i].preview;
       //append random song to the page
-      detail_container.append(`<div class="text-center"><audio class="mt-3 text-center" autoplay loop controls volume 0.001 >
+      detail_container.append(`<div class="text-center"><audio class="mt-3 text-center"  loop controls volume 0.001 >
       <source src="${audioFile}" />
     </audio><br/><p>Now's playing: ${audioTitle}</p></div>`);
     });
