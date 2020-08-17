@@ -1,25 +1,9 @@
 const detail_container = $('.item-detail');
-const audioEl = $('.audioEl')
+const audioEl = $('.audioEl');
 var btn = $('.menu-item');
-
-$.ajax({
-  url: '/api/music',
-  method: 'GET',
-}).then(function (songs) {
-  let i = Math.floor(Math.random() * songs.length)
-  //choose the random song
-  let audioTitle = songs[i].title_short;
-  let audioFile = songs[i].preview;
-  //append random song to the page
-  audioEl.append(`<audio autoplay loop controls volume 0.001 >
-    <source src="${audioFile}" />
-  </audio><br/><p>Now's playing: ${audioTitle}</p>`)
-});
-
 
 btn.on('click', (e) => {
   //make ajax request
-
 
   let q;
 
@@ -42,11 +26,25 @@ btn.on('click', (e) => {
       <div class="card-body">
           <h5 class="card-title title">${menuItems[0].title}</h5>
           <p class="card-text">Serving Size: ${
-      menuItems[0].servingSize ? menuItems[0].servingSize : 1
-      }</p>
+            menuItems[0].servingSize ? menuItems[0].servingSize : 1
+          }</p>
           <button class="btn btn-warning btn-block text-white submit_order">Place order</button>
       </div>
   </div>`);
+
+    $.ajax({
+      url: '/api/music',
+      method: 'GET',
+    }).then(function (songs) {
+      let i = Math.floor(Math.random() * songs.length);
+      //choose the random song
+      let audioTitle = songs[i].title_short;
+      let audioFile = songs[i].preview;
+      //append random song to the page
+      detail_container.append(`<div class="text-center"><audio class="mt-3 text-center" autoplay loop controls volume 0.001 >
+      <source src="${audioFile}" />
+    </audio><br/><p>Now's playing: ${audioTitle}</p></div>`);
+    });
 
     $('.submit_order').on('click', () => {
       console.log('clicked');
@@ -56,5 +54,3 @@ btn.on('click', (e) => {
     });
   });
 });
-
-

@@ -78,7 +78,7 @@ body {
 }
 
 .logo {
-  width: 40%;
+  width: 50%;
 }
 
 .nav_items {
@@ -142,7 +142,7 @@ body {
   border-radius: 3px;
   transition: var(--transion);
   box-shadow: var(--shadow);
-  width: 20rem;
+  width: 22rem;
 }
 
 .menu-item:hover {
@@ -181,6 +181,18 @@ body {
   justify-content: space-between;
 }
 
+.item-detail {
+  position: relative;
+}
+
+audio {
+  width: 100%;
+}
+
+audio:focus {
+  outline: none;
+}
+
 .fa-check {
   transition: var(--transion);
 }
@@ -207,6 +219,6 @@ body {
   width: 30vh;
   height: 30vh;
 }
-.audioEl{
+.audioEl {
   margin-top: 3%;
 }
