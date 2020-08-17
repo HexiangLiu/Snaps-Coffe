@@ -1,10 +1,12 @@
 const current_container = $('.current_orders');
 const past_container = $('.past_orders');
+const name_field = $('.username');
+const greeting_field = $('.greeting');
 
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
-  $.get('/api/user_data').then(function (orders) {
+  $.get('/api/user_data').then(function ({ orders, name }) {
     current_container.empty();
     past_container.empty();
 
@@ -23,6 +25,9 @@ $(document).ready(function () {
       </li>`);
       }
     });
+
+    name_field.text(name);
+    greeting_field.text(`Welcome back ${name}! Enjoy your coffee!`);
 
     $('.fa-check').on('click', (e) => {
       const id = $(e.target).data('id');
