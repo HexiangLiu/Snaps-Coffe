@@ -1,7 +1,7 @@
 const detail_container = $('.item-detail');
-
+// const getComposition = require("../utils/api_music.js")
 var btn = $('.menu-item');
-// const getComposition = require("./utils/api_music.js")
+
 $.ajax({
   url: '/api/music',
   method: 'GET',
@@ -12,6 +12,7 @@ $.ajax({
     console.log('audioFile:', audioFile);
     console.log('audioTitle:', audioTitle);
   });
+
 
   btn.on('click', (e) => {
     //make ajax request
